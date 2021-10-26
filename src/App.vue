@@ -1,26 +1,56 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <base-header :categories="categories" :purchase="totalPrice"></base-header>
+    <router-view :dataset="collections" :updateCart="addToCart" :cart="cart" :purchase="totalPrice" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BaseHeader from './components/BaseHeader.vue'
+import Data from './assets/book_list.json'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      'collections': Data.collection,
+      'categories': [],
+      'cart': []
+    }
+  },
+  computed: {
+    totalPrice () {
+      let total = 0
+      for (let i = 0; i < this.cart.length; i++) {
+        total += Number(this.cart[i].Price)
+      }
+      return total
+    }
+  },
   components: {
-    HelloWorld
+    'base-header': BaseHeader
+  },
+  created () {
+    this.categories = this.getCategories()
+  },
+  methods: {
+    getCategories: function () {
+      let listedCategories = []
+      this.collections.filter((item) => {
+        if (!listedCategories.includes(item.Genre)) {
+          listedCategories.push(item.Genre)
+        }
+      })
+      return listedCategories
+    },
+    addToCart: function (item) {
+      this.cart.push(item)
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
+

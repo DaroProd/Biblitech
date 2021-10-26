@@ -1,4 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router'
 
-createApp(App).mount('#app')
+import { FontAwesomeIcon } from './lib/fontAwesome'
+
+createApp(App)
+.use(router)
+.component('FontAwesomeIcon', FontAwesomeIcon)
+.mount('#app')
