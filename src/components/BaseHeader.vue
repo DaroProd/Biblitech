@@ -1,13 +1,10 @@
 <template>
   <header class="base-header">
     <div class="header-content">
-      <div class="logo">
-        <font-awesome-icon class="icon" :icon="['fas', 'book-open']" /> BibliTech
-      </div>
-      <base-button @click.prevent="route_to('/')">
-        <font-awesome-icon class="icon" :icon="['fas', 'home']" /> Home
-      </base-button>
+      <font-awesome-icon class="icon" :icon="['fas', 'book-open']" /> BibliTech
+      <base-button @click.prevent="route_to('/')">Home</base-button>
       <base-button @click.prevent="route_to('/products')">Products</base-button>
+      <!-- <base-button v-for="category in categories" :key="category" @click.prevent="route_to('/categories/'+category)">Category</base-button> -->
       <div class="separator-header" />
       <base-button @click="checkout">Checkout</base-button>
     </div>
@@ -34,16 +31,13 @@ export default {
 
 <style scoped>
 .base-header {
-  background-color: #7042b9;
+  background-color: #42b983;
   padding: 1em;
 }
 .header-content {
   display: flex;
   max-width: 70em;
   margin: auto;
-}
-.logo {
-  font-size: 25px;
 }
 .separator-header {
   flex-grow: 1;

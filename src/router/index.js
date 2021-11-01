@@ -1,8 +1,8 @@
 import  { createRouter, createWebHistory} from 'vue-router'
 import Home from '@/pages/Home'
 import Products from '@/pages/Products'
-//import Categories from '@/components/Categories'
-//import ProductDetails from '@/components/ProductDetails'
+import Categories from '@/pages/Categories'
+import ProductDetails from '@/pages/ProductDetails'
 import Checkout from '@/pages/Checkout'
 
 const routes = [
@@ -21,13 +21,13 @@ const routes = [
   {
     path: '/categories/:type',
     name: 'Categories',
-    //component: Categories,
-    //props: true
+    component: Categories,
+    props: true
   },
   {
     path: '/products/:productID',
     name: 'ProductDetails',
-    //component: ProductDetails
+    component: ProductDetails
   },
   {
     path: '/checkout',

@@ -20,7 +20,7 @@ export default {
     props: ['item', 'updateCart'],
     methods: {
         details(title) {
-            this.$router.push('/products' + title)
+            this.$router.push('/products/' + title)
         }
     }
 }
