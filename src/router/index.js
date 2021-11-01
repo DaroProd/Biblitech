@@ -3,7 +3,7 @@ import Home from '@/pages/Home'
 import Products from '@/pages/Products'
 //import Categories from '@/components/Categories'
 //import ProductDetails from '@/components/ProductDetails'
-//import Checkout from '@/components/checkout'
+import Checkout from '@/pages/Checkout'
 
 const routes = [
   {
@@ -32,7 +32,7 @@ const routes = [
   {
     path: '/checkout',
     name: 'Checkout',
-    //component: Checkout
+    component: Checkout
   }
 ]
 
