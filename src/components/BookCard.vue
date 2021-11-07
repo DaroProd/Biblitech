@@ -8,7 +8,7 @@
             <p>Prix: ${{item.price}}</p>
         </nav>
         <hr>
-        <base-button @click.prevent="updateCart(item)"><font-awesome-icon class="icon" :icon="['fas', 'cart-plus']" /></base-button>
+        <base-button class='margin-button' @click.prevent="updateCart(item)"><font-awesome-icon class="icon" :icon="['fas', 'cart-plus']" /></base-button>
         <base-button @click="details(item.title)"><font-awesome-icon class="icon" :icon="['fas', 'list']" /></base-button>
     </div>
 </template>
@@ -27,5 +27,7 @@ export default {
 }
 </script>
 <style scoped>
-
+.margin-button{
+    margin-right: 1em;
+}
 </style>

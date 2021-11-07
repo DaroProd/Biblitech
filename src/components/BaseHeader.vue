@@ -11,7 +11,7 @@
         </ul>
         </base-button>
       <div class="separator-header" />
-      <base-button @click="checkout">Checkout</base-button>
+      <base-button @click="checkout">Panier</base-button>
     </div>
   </header>
 </template>
