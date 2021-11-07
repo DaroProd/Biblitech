@@ -7,7 +7,7 @@
 
 <script>
 import BaseHeader from './components/BaseHeader.vue'
-import Data from './assets/book_list.json'
+import Data from './assets/books.json'
 
 export default {
   name: 'App',
@@ -22,7 +22,7 @@ export default {
     totalPrice () {
       let total = 0
       for (let i = 0; i < this.cart.length; i++) {
-        total += Number(this.cart[i].Price)
+        total += Number(this.cart[i].price)
       }
       return total
     }
@@ -37,8 +37,8 @@ export default {
     getCategories: function () {
       let listedCategories = []
       this.collections.filter((item) => {
-        if (!listedCategories.includes(item.Genre)) {
-          listedCategories.push(item.Genre)
+        if (!listedCategories.includes(item.genre)) {
+          listedCategories.push(item.genre)
         }
       })
       return listedCategories

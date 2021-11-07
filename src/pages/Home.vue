@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+      <h1> SHOP BY CATEGORY </h1>
         <div v-for="(category) in categories" :key="category">
           <book-category :products="getDisplayProducts(category)" :product_category="category" :updateCart="updateCart"></book-category>
         </div>
@@ -28,15 +29,15 @@ export default {
     getCategories: function () {
       let listedCategories = []
       this.collections.filter((item) => {
-        if (!listedCategories.includes(item.Genre)) {
-          listedCategories.push(item.Genre)
+        if (!listedCategories.includes(item.genre)) {
+          listedCategories.push(item.genre)
         }
       })
       return listedCategories
     },
     getDisplayProducts (category) {
       let productList = this.collections.filter((element) => {
-        if (element.Genre === category) {
+        if (element.genre === category) {
           return element
         }
       })
@@ -47,5 +48,7 @@ export default {
 </script>
 
 <style scoped>
-
+h1{
+  text-align: center;
+}
 </style>

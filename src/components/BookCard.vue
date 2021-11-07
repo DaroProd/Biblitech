@@ -1,14 +1,15 @@
 <template>
     <div class="container">
         <nav class="card-text">
-            <h1> {{item.Title }}</h1>
-            <p>Auteur: {{ item.Author}}</p>
+            <h1> {{item.title }}</h1>
+            <img v-bind:src="item.thumbnailUrl" width="100" height="100">
+            <p>Auteur: {{ item.authors}}</p>
             <hr>
-            <p>Prix: ${{item.Price}}</p>
+            <p>Prix: ${{item.price}}</p>
         </nav>
         <hr>
         <base-button @click.prevent="updateCart(item)"><font-awesome-icon class="icon" :icon="['fas', 'cart-plus']" /></base-button>
-        <base-button @click="details(item.Title)"><font-awesome-icon class="icon" :icon="['fas', 'list']" /></base-button>
+        <base-button @click="details(item.title)"><font-awesome-icon class="icon" :icon="['fas', 'list']" /></base-button>
     </div>
 </template>
 
@@ -19,9 +20,12 @@ export default {
     components: {BaseButton},
     props: ['item', 'updateCart'],
     methods: {
-        details(title) {
-            this.$router.push('/products/' + title)
+        details(Title) {
+            this.$router.push('/products/' + Title)
         }
     }
 }
 </script>
+<style scoped>
+
+</style>

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="header">
-      <div v-for="item in computedItems" :key="item.Title+item.Price">
+      <div class="body" v-for="item in computedItems" :key="item.title+item.price">
         <book-card :item="item" :updateCart="updateCart"></book-card>
       </div>
     </div>
@@ -25,7 +25,7 @@ export default {
   computed: {
     computedItems () {
       let productList = this.collections.filter((element) => {
-        if (element.Genre === this.$route.params.type) {
+        if (element.genre === this.$route.params.type) {
           return element
         }
       })
@@ -36,5 +36,14 @@ export default {
 </script>
 
 <style scoped>
-
+.body{
+  display: inline-block;
+  margin: 2em;
+}
+.body > * {
+    border: 1px solid black;
+}
+.header{
+  text-align: center;
+}
 </style>

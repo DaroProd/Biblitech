@@ -45,8 +45,9 @@ export default {
 }
 .header-content {
   display: flex;
-  max-width: 73em;
+  max-width: 54em;
   margin: auto;
+  font-size: 27px;
 }
 .separator-header {
   flex-grow: 1;

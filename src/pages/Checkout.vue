@@ -2,16 +2,16 @@
     <div class="container">
         <div class="left-part">
             <p v-if="!purchase || purchase.length === 0 ">No Books in the Cart!</p>
-            <div v-for="item in cartItems" :key="item.Item.Title">
+            <div v-for="item in cartItems" :key="item.Item.title">
                 <div class="col-slide-3">
                     <!-- Put the Image of the book here -->
                 </div>
                 <div class="col-slide-9">
                     <div>
-                        <h5>{{item.Item.Title}}</h5>
-                        <p>Author: {{item.Item.Author}}</p>
+                        <h4>{{item.Item.title}}</h4>
+                        <p>Author: {{item.Item.authors}}</p>
                         <p>Amount: {{item.amount}}</p>
-                        <p>Price: {{item.Item.Price}}</p>
+                        <p>Price: {{item.Item.price}}</p>
                     </div>
                 </div>
             </div>
